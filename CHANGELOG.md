@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.2a2](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.2a2) (2026-01-29)
+
+[Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/0.0.2a1...0.0.2a2)
+
+**Merged pull requests:**
+
+- Update dependency ovos-plugin-manager to v2 [\#6](https://github.com/TigreGotico/ovos-media-plugin-ffplay/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.2a1](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.2a1) (2025-12-18)
 
 [Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/187e411cde66a555a1d937f5ba54f9202448e7c8...0.0.2a1)
