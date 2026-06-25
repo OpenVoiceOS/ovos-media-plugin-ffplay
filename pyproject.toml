@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-media-plugin-ffplay"
+dynamic = ["version"]
+description = "ffplay plugin for ovos"
+readme = "README.md"
+authors = [
+    { name = "JarbasAI", email = "jarbasai@mailfence.com" }
+]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+keywords = ["ovos", "audio", "video", "OCP", "plugin"]
+dependencies = [
+    "ovos-plugin-manager>=2.2.0,<3.0.0",
+    "ovos-utils>=0.5.0",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    # end-to-end harness: drives the real backend through a real OCPMediaPlayer.
+    # [media] (the OCPPlayerHarness) lands in ovoscope 0.20.x; floor-pin so pip
+    # resolves it without --pre once published.
+    "ovoscope[media]>=0.20.0a1",
+]
+
+# new ovos-media backend
+[project.entry-points."opm.media.audio"]
+"ovos-media-audio-plugin-ffplay" = "ovos_media_plugin_ffplay:FFPlayOCPAudioService"
+
+# legacy ovos-audio service backend (so the plugin works on both stacks)
+[project.entry-points."mycroft.plugin.audioservice"]
+"ovos_ffplay" = "ovos_media_plugin_ffplay.audio"
+
+[tool.setuptools.dynamic]
+version = { attr = "ovos_media_plugin_ffplay.version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ovos_media_plugin_ffplay*"]
