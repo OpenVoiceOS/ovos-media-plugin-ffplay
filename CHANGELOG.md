@@ -1,36 +1,44 @@
 # Changelog
 
-## [0.0.3a2](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.3a2) (2026-06-25)
+## [0.0.3a3](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.3a3) (2026-06-25)
 
-[Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/0.0.3a1...0.0.3a2)
-
-**Merged pull requests:**
-
-- test: contract tests for new + legacy backends [\#9](https://github.com/TigreGotico/ovos-media-plugin-ffplay/pull/9) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.0.3a1](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.3a1) (2026-06-20)
-
-[Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/0.0.2a2...0.0.3a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.3a2...0.0.3a3)
 
 **Merged pull requests:**
 
-- fix: allow latest ovos-plugin-manager [\#8](https://github.com/TigreGotico/ovos-media-plugin-ffplay/pull/8) ([JarbasAl](https://github.com/JarbasAl))
+- chore: modernize packaging to pyproject.toml only [\#10](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/10) ([JarbasAl](https://github.com/JarbasAl))
 
-## [0.0.2a2](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.2a2) (2026-01-29)
+## [0.0.3a2](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.3a2) (2026-06-25)
 
-[Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/0.0.2a1...0.0.2a2)
-
-**Merged pull requests:**
-
-- Update dependency ovos-plugin-manager to v2 [\#6](https://github.com/TigreGotico/ovos-media-plugin-ffplay/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.0.2a1](https://github.com/TigreGotico/ovos-media-plugin-ffplay/tree/0.0.2a1) (2025-12-18)
-
-[Full Changelog](https://github.com/TigreGotico/ovos-media-plugin-ffplay/compare/187e411cde66a555a1d937f5ba54f9202448e7c8...0.0.2a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.3a1...0.0.3a2)
 
 **Merged pull requests:**
 
-- Configure Renovate [\#1](https://github.com/TigreGotico/ovos-media-plugin-ffplay/pull/1) ([renovate[bot]](https://github.com/apps/renovate))
+- test: contract tests for new + legacy backends [\#9](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/9) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.3a1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.3a1) (2026-06-20)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.2a2...0.0.3a1)
+
+**Merged pull requests:**
+
+- fix: allow latest ovos-plugin-manager [\#8](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/8) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.2a2) (2026-01-29)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.2a1...0.0.2a2)
+
+**Merged pull requests:**
+
+- Update dependency ovos-plugin-manager to v2 [\#6](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.2a1) (2025-12-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/187e411cde66a555a1d937f5ba54f9202448e7c8...0.0.2a1)
+
+**Merged pull requests:**
+
+- Configure Renovate [\#1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/1) ([renovate[bot]](https://github.com/apps/renovate))
 
 
 
