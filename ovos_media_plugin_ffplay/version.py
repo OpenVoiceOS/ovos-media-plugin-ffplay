@@ -2,7 +2,7 @@
 VERSION_MAJOR = 0
 VERSION_MINOR = 0
 VERSION_BUILD = 3
-VERSION_ALPHA = 2
+VERSION_ALPHA = 3
 # END_VERSION_BLOCK
 
 # derived from the VERSION_BLOCK above so pyproject can read it as the
