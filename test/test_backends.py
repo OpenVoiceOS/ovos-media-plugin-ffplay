@@ -63,7 +63,7 @@ class TestEntryPoints(unittest.TestCase):
     def test_setup_declares_new_and_legacy_groups(self):
         import os
         here = os.path.dirname(os.path.dirname(__file__))
-        with open(os.path.join(here, "setup.py")) as f:
+        with open(os.path.join(here, "pyproject.toml")) as f:
             setup_src = f.read()
         self.assertIn("opm.media.audio", setup_src)
         self.assertIn("mycroft.plugin.audioservice", setup_src)
