@@ -1,6 +1,6 @@
 # ovos-media-plugin-ffplay
 
-ffplay plugin for [ovos-audio](https://github.com/OpenVoiceOS/ovos-audio) and [ovos-media](https://github.com/OpenVoiceOS/ovos-media)
+This plugin adds ffplay as an audio backend for [ovos-audio](https://github.com/OpenVoiceOS/ovos-audio) and [ovos-media](https://github.com/OpenVoiceOS/ovos-media). It plays media through the `ffplay` command from FFmpeg.
 
 ## Install
 
@@ -8,7 +8,7 @@ ffplay plugin for [ovos-audio](https://github.com/OpenVoiceOS/ovos-audio) and [o
 
 ## Configuration
 
-edit your mycroft.conf with any ffplay players you want to expose
+Edit your `mycroft.conf` file to expose the ffplay backend.
 
 ```javascript
 {
@@ -25,7 +25,7 @@ edit your mycroft.conf with any ffplay players you want to expose
 
 ## Python usage
 
-direct access to ffplay is provided via `FFPlayAudioPlayer`
+The `FFPlayAudioPlayer` class gives direct access to ffplay.
 
 ```python
 import time
@@ -63,3 +63,8 @@ print(f"Volume: {player.volume}")
 player.wait_for_end_of_playback()
 
 ```
+
+## Related projects
+
+- [OpenVoiceOS/ovos-audio](https://github.com/OpenVoiceOS/ovos-audio): the audio service that loads this plugin
+- [OpenVoiceOS/ovos-media](https://github.com/OpenVoiceOS/ovos-media): the media service that loads this plugin
