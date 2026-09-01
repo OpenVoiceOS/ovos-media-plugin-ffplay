@@ -175,6 +175,7 @@ class FFPlayAudioPlayer:
         """
         if self.process:
             self.process.kill()
+            self.process.wait()  # reap now, killed children are never reaped by the monitor thread
             self.is_playing.clear()
             self.end_of_media.set()
             self._playback_time_accumulator = self._start_ts = 0
