@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.4a1) (2026-09-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.3a4...0.0.4a1)
+
+**Merged pull requests:**
+
+- fix: reap the playback child after stop kills it [\#12](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/12) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.3a4](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.3a4) (2026-07-31)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.3a3...0.0.3a4)
