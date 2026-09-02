@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.5a1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.5a1) (2026-09-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.4a1...0.0.5a1)
+
+**Merged pull requests:**
+
+- fix: report natural end-of-media on the bus [\#13](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/tree/0.0.4a1) (2026-09-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay/compare/0.0.3a4...0.0.4a1)
