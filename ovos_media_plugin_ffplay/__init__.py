@@ -30,14 +30,23 @@ class FFPlayOCPAudioService(AudioPlayerBackend):
             self._track_start_callback(self._now_playing)
 
     def on_track_end(self, uri: str = ""):
+        # Called from FFPlayAudioPlayer's monitor thread whenever the
+        # ffplay process exits, whether that is a natural end-of-media
+        # (autoexit) or a stop() we requested ourselves. ocp_stop() is
+        # idempotent (it no-ops once self._now_playing is None), so it is
+        # safe to call here even when stop() already triggered it - this
+        # is the only path that reports a *natural* end-of-media upward,
+        # since nothing else calls ocp_stop() for that case.
         if self._track_start_callback:
             self._track_start_callback(None)
+        self.ocp_stop()
 
     def play(self):
         self.ffplay.play(self._now_playing)
 
     def stop(self):
         self.ffplay.stop()
+        return True
 
     def pause(self):
         self.ffplay.pause()
