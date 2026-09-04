@@ -1,11 +1,32 @@
+import ctypes
 import os
 import signal
 import subprocess
+import sys
 import threading
 import time
 from typing import Optional, Callable
 
 Callback = Callable[[], None]  # for typing
+
+
+def _die_with_parent() -> None:
+    """``preexec_fn`` for the ffplay child: ask the kernel to SIGKILL it if
+    this process dies without a chance to kill it itself (e.g. ``kill -9``
+    on the daemon) - without this, an orphaned ffplay child gets reparented
+    to init and plays to completion instead of dying with its parent.
+
+    ``PR_SET_PDEATHSIG`` (prctl arg 1) is Linux-only and best-effort: if the
+    parent is itself later reparented (e.g. by a supervisor doing its own
+    double-fork), the signal is not reapplied. Any failure to set it (no
+    libc.so.6, non-Linux) is silently ignored rather than blocking playback
+    over a defense-in-depth safety net.
+    """
+    try:
+        libc = ctypes.CDLL("libc.so.6", use_errno=True)
+        libc.prctl(1, signal.SIGKILL)  # 1 == PR_SET_PDEATHSIG
+    except Exception:
+        pass
 
 
 class FFPlayAudioPlayer:
@@ -94,10 +115,13 @@ class FFPlayAudioPlayer:
             cmd = ['ffplay', '-volume', str(volume), '-ss', str(start_time), '-nodisp', '-autoexit', '-vn', media_path]
         else:
             cmd = ['ffplay', '-volume', str(volume), '-nodisp', '-autoexit', '-vn', media_path]
-        # Redirect stdout and stderr to /dev/null to avoid buffer overflow
+        # Redirect stdout and stderr to /dev/null to avoid buffer overflow.
+        # preexec_fn is Linux-only best-effort (see _die_with_parent); on
+        # other platforms the child is spawned without it.
         self.process = subprocess.Popen(cmd,
                                         stdout=open(os.devnull, 'w'),  # Redirect stdout to /dev/null
-                                        stderr=open(os.devnull, 'w')  # Redirect stderr to /dev/null
+                                        stderr=open(os.devnull, 'w'),  # Redirect stderr to /dev/null
+                                        preexec_fn=_die_with_parent if sys.platform.startswith("linux") else None
                                         )
         self.is_playing.set()
         self._start_ts = time.time()
